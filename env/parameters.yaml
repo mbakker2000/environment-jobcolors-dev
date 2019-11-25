@@ -1,0 +1,10 @@
+adminUser:
+  password: local:jobcolors/adminUser:password
+  username: admin
+enableDocker: false
+pipelineUser:
+  email: bakker.mark@gmail.com
+  token: local:jobcolors/pipelineUser:token
+  username: mbakker2000
+prow:
+  hmacToken: local:jobcolors/prow:hmacToken

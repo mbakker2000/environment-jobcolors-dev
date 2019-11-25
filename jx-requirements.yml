@@ -1,24 +1,62 @@
+autoUpdate:
+  enabled: false
+  schedule: ""
+bootConfigURL: https://github.com/mbakker2000/environment-jobcolors-dev
 cluster:
-  clusterName: ""
-  environmentGitOwner: ""
-  project: ""
+  clusterName: jobcolors
+  environmentGitOwner: mbakker2000
+  gitKind: github
+  gitName: github
+  gitServer: https://github.com
+  namespace: jx
+  project: jobcolors
   provider: gke
-  zone: ""
-gitops: true
+  registry: gcr.io
+  zone: europe-west1-b
 environments:
-- key: dev
-- key: staging
-- key: production
+- ingress:
+    domain: 130.211.104.253.nip.io
+    externalDNS: false
+    namespaceSubDomain: -jx.
+    tls:
+      email: ""
+      enabled: false
+      production: false
+  key: dev
+- ingress:
+    domain: ""
+    externalDNS: false
+    namespaceSubDomain: ""
+    tls:
+      email: ""
+      enabled: false
+      production: false
+  key: staging
+- ingress:
+    domain: ""
+    externalDNS: false
+    namespaceSubDomain: ""
+    tls:
+      email: ""
+      enabled: false
+      production: false
+  key: production
+gitops: true
 ingress:
-  domain: ""
+  domain: 130.211.104.253.nip.io
   externalDNS: false
+  namespaceSubDomain: -jx.
   tls:
     email: ""
     enabled: false
     production: false
 kaniko: true
+repository: nexus
 secretStorage: local
 storage:
+  backup:
+    enabled: false
+    url: ""
   logs:
     enabled: false
     url: ""
@@ -28,7 +66,9 @@ storage:
   repository:
     enabled: false
     url: ""
+vault: {}
+velero: {}
 versionStream:
-  ref: "master"
+  ref: v1.0.220
   url: https://github.com/jenkins-x/jenkins-x-versions.git
 webhook: prow
