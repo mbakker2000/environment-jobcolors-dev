@@ -1,0 +1,220 @@
+
+Showing logs for build [32mmbakker2000-environment-jobcolo-2bhbr-1[0m stage [32mrelease[0m and container [32mstep-credential-initializer-k9lzz[0m
+{"level":"warn","ts":1574750975.0299082,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: \"ref: refs/heads/master\" is not a valid GitHub commit ID"}
+{"level":"info","ts":1574750975.030936,"logger":"fallback-logger","caller":"creds-init/main.go:40","msg":"Credentials initialized."}
+
+Showing logs for build [32mmbakker2000-environment-jobcolo-2bhbr-1[0m stage [32mrelease[0m and container [32mstep-working-dir-initializer-7x98b[0m
+{"level":"warn","ts":1574750976.390814,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: open /var/run/ko/HEAD: no such file or directory"}
+{"level":"info","ts":1574750976.3924284,"logger":"fallback-logger","caller":"bash/main.go:65","msg":"Successfully executed command \"mkdir -p /workspace/source\""}
+
+Showing logs for build [32mmbakker2000-environment-jobcolo-2bhbr-1[0m stage [32mrelease[0m and container [32mstep-place-tools[0m
+
+Showing logs for build [32mmbakker2000-environment-jobcolo-2bhbr-1[0m stage [32mrelease[0m and container [32mstep-git-source-mbakker2000-environment-jobcolo-bgnk8[0m
+{"level":"warn","ts":1574750987.4785674,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: \"ref: refs/heads/master\" is not a valid GitHub commit ID"}
+{"level":"info","ts":1574750989.1236632,"logger":"fallback-logger","caller":"git/git.go:102","msg":"Successfully cloned https://github.com/***********/environment-jobcolors-dev.git @ v1.0.52 in path /workspace/source"}
+
+Showing logs for build [32mmbakker2000-environment-jobcolo-2bhbr-1[0m stage [32mrelease[0m and container [32mstep-git-merge[0m
+Using SHAs from PULL_REFS=master:060c35ff7ca87ef3cee32c196b806098d3c84a38
+WARNING: no SHAs to merge, falling back to initial cloned commit
+
+Showing logs for build [32mmbakker2000-environment-jobcolo-2bhbr-1[0m stage [32mrelease[0m and container [32mstep-validate-git[0m
+Git configured for user: jenkins-x-bot and email jenkins-x@googlegroups.com
+
+Showing logs for build [32mmbakker2000-environment-jobcolo-2bhbr-1[0m stage [32mrelease[0m and container [32mstep-verify-preinstall[0m
+no need to reconnect to cluster
+WARNING: TLS is not enabled so your webhooks will be called using HTTP. This means your webhook secret will be sent to your cluster in the clear. See https://jenkins-x.io/architecture/tls for more information
+Verifying the kubernetes cluster before we try to boot Jenkins X in namespace: **
+Trying to lazily create any missing resources to get the current cluster ready to boot Jenkins X
+Verifying Ingress...
+Clearing the domain 130.211.104.253.nip.io as when using auto-DNS domains we need to regenerate to ensure its always accurate in case the cluster or ingress service is recreated
+
+Using namespace '**' from context named '' on server ''.
+
+Verifying the CLI packages using version stream URL: https://github.com/jenkins-x/jenkins-x-versions.git and git ref: v1.0.220
+
+WARNING: A different ** version 2.0.1011 is available in the version stream. We highly recommend you upgrade to it.
+WARNING: To upgrade to this new version use: ** upgrade cli then re-run ** boot
+CLI packages kubectl, git, helm seem to be setup correctly
+NAME               VERSION
+**                 2.0.1012
+Kubernetes cluster v1.13.11-gke.14
+kubectl            v1.16.3
+helm client        Client: v2.14.3+g0e7f3b6
+git                2.21.0
+
+Verifying Storage...
+WARNING: Your requirements have not enabled cloud storage for logs - we recommend enabling this for kubernetes provider gke
+WARNING: Your requirements have not enabled cloud storage for reports - we recommend enabling this for kubernetes provider gke
+WARNING: Your requirements have not enabled cloud storage for repository - we recommend enabling this for kubernetes provider gke
+WARNING: Your requirements have not enabled cloud storage for backup - we recommend enabling this for kubernetes provider gke
+Storage configuration looks good
+
+Helm installed and configured
+Ensuring Helm chart repository https://storage.googleapis.com/chartmuseum.jenkins-x.io is configured
+Validating Kaniko secret in namespace **
+
+Cluster looks good, you are ready to '** boot' now!
+
+
+Showing logs for build [32mmbakker2000-environment-jobcolo-2bhbr-1[0m stage [32mrelease[0m and container [32mstep-install-jx-crds[0m
+Jenkins X CRDs upgraded with success
+
+Showing logs for build [32mmbakker2000-environment-jobcolo-2bhbr-1[0m stage [32mrelease[0m and container [32mstep-install-velero[0m
+Modified file /workspace/source/systems/velero/Chart.yaml to set the chart to version 1
+Verifying the helm requirements versions in dir: . using version stream URL: https://github.com/jenkins-x/jenkins-x-versions.git and git ref: v1.0.220
+
+Showing logs for build [32mmbakker2000-environment-jobcolo-2bhbr-1[0m stage [32mrelease[0m and container [32mstep-install-velero-backups[0m
+Modified file /workspace/source/systems/velero-backups/Chart.yaml to set the chart to version 1
+Ignoring templates/default-backup.yaml
+No requirements file: /tmp/**-helm-apply-992021027/velero-backups/requirements.yaml so not checking for missing versions
+
+Showing logs for build [32mmbakker2000-environment-jobcolo-2bhbr-1[0m stage [32mrelease[0m and container [32mstep-install-nginx-controller[0m
+Modified file /workspace/source/systems/**ing/Chart.yaml to set the chart to version 1
+Verifying the helm requirements versions in dir: . using version stream URL: https://github.com/jenkins-x/jenkins-x-versions.git and git ref: v1.0.220
+
+
+Showing logs for build [32mmbakker2000-environment-jobcolo-2bhbr-1[0m stage [32mrelease[0m and container [32mstep-create-install-values[0m
+Waiting to find the external host name of the ingress controller Service in namespace kube-system with name **ing-nginx-ingress-controller
+No domain flag provided so using default 130.211.104.253.nip.io to generate Ingress rules
+defaulting the domain to 130.211.104.253.nip.io and modified /workspace/source/**-requirements.yml
+
+Showing logs for build [32mmbakker2000-environment-jobcolo-2bhbr-1[0m stage [32mrelease[0m and container [32mstep-install-external-dns[0m
+Modified file /workspace/source/systems/external-dns/Chart.yaml to set the chart to version 1
+Verifying the helm requirements versions in dir: . using version stream URL: https://github.com/jenkins-x/jenkins-x-versions.git and git ref: v1.0.220
+Adding missing Helm repo: charts.bitnami.com https://charts.bitnami.com/bitnami
+Successfully added Helm repository charts.bitnami.com.
+
+Showing logs for build [32mmbakker2000-environment-jobcolo-2bhbr-1[0m stage [32mrelease[0m and container [32mstep-install-cert-manager-crds[0m
+customresourcedefinition.apiextensions.k8s.io/certificates.certmanager.k8s.io configured
+customresourcedefinition.apiextensions.k8s.io/challenges.certmanager.k8s.io configured
+customresourcedefinition.apiextensions.k8s.io/clusterissuers.certmanager.k8s.io configured
+customresourcedefinition.apiextensions.k8s.io/issuers.certmanager.k8s.io configured
+customresourcedefinition.apiextensions.k8s.io/orders.certmanager.k8s.io configured
+
+Showing logs for build [32mmbakker2000-environment-jobcolo-2bhbr-1[0m stage [32mrelease[0m and container [32mstep-install-cert-manager[0m
+Modified file /workspace/source/systems/cm/Chart.yaml to set the chart to version 1
+Verifying the helm requirements versions in dir: . using version stream URL: https://github.com/jenkins-x/jenkins-x-versions.git and git ref: v1.0.220
+Adding missing Helm repo: charts.jetstack.io https://charts.jetstack.io
+Successfully added Helm repository charts.jetstack.io.
+
+Showing logs for build [32mmbakker2000-environment-jobcolo-2bhbr-1[0m stage [32mrelease[0m and container [32mstep-install-acme-issuer-and-certificate[0m
+Modified file /workspace/source/systems/acme/Chart.yaml to set the chart to version 1
+Ignoring templates/cert-manager-prod-certificate.yaml
+Ignoring templates/cert-manager-prod-issuer.yaml
+Ignoring templates/cert-manager-staging-certificate.yaml
+Ignoring templates/cert-manager-staging-issuer.yaml
+No requirements file: /tmp/**-helm-apply-900377721/acme/requirements.yaml so not checking for missing versions
+
+Showing logs for build [32mmbakker2000-environment-jobcolo-2bhbr-1[0m stage [32mrelease[0m and container [32mstep-install-vault[0m
+not attempting to boot Vault as using secret storage: local
+
+Showing logs for build [32mmbakker2000-environment-jobcolo-2bhbr-1[0m stage [32mrelease[0m and container [32mstep-create-helm-values[0m
+defaulting to secret storage scheme local found from requirements file at /workspace/source/**-requirements.yml
+defaulting to secret base path to the cluster name jobcolors found from requirements file at /workspace/source/**-requirements.yml
+generated schema file /workspace/source/env/parameters.schema.json from template /workspace/source/env/parameters.tmpl.schema.json
+
+Jenkins X Admin Username ***** [Automatically accepted existing value]
+Jenkins X Admin Password *** [Automatically accepted existing value]
+Pipeline bot Git username *********** [Automatically accepted existing value]
+Pipeline bot Git email address bakker.mark@gmail.com [Automatically accepted existing value]
+Pipeline bot Git token *** [Automatically accepted existing value]
+HMAC token, used to validate incoming webhooks. Press enter to use the generated token *** [Automatically accepted existing value]
+Do you want to configure an external Docker Registry? false [Automatically accepted existing value]
+
+
+Showing logs for build [32mmbakker2000-environment-jobcolo-2bhbr-1[0m stage [32mrelease[0m and container [32mstep-install-jenkins-x[0m
+Modified file /workspace/source/env/Chart.yaml to set the chart to version 1
+Ignoring templates/.gitignore
+Applying the kubernetes overrides at ../kubeProviders/gke/values.tmpl.yaml
+Verifying the helm requirements versions in dir: . using version stream URL: https://github.com/jenkins-x/jenkins-x-versions.git and git ref: v1.0.220
+Adding missing Helm repo: chartmuseum.jenkins-x.io http://chartmuseum.jenkins-x.io
+Successfully added Helm repository chartmuseum.jenkins-x.io.
+
+
+
+Showing logs for build [32mmbakker2000-environment-jobcolo-2bhbr-1[0m stage [32mrelease[0m and container [32mstep-verify-jenkins-x-environment[0m
+Storing the requirements in team settings in the dev environment
+Validating git repository for dev environment at URL https://github.com/***********/environment-jobcolors-dev.git
+Validating git repository for production environment at URL https://github.com/***********/environment-jobcolors-production.git
+Using Git provider github at https://github.com
+? Using Git user name: ***********
+? Using organisation: ***********
+Creating repository ***********/environment-jobcolors-production
+Git repository ***********/environment-jobcolors-production already exists
+Pushed Git repository to https://github.com/***********/environment-jobcolors-production
+
+Validating git repository for staging environment at URL https://github.com/***********/environment-jobcolors-staging.git
+Using Git provider github at https://github.com
+? Using Git user name: ***********
+? Using organisation: ***********
+Creating repository ***********/environment-jobcolors-staging
+Git repository ***********/environment-jobcolors-staging already exists
+Pushed Git repository to https://github.com/***********/environment-jobcolors-staging
+
+Environment git repositories look good
+
+
+Showing logs for build [32mmbakker2000-environment-jobcolo-2bhbr-1[0m stage [32mrelease[0m and container [32mstep-install-repositories[0m
+Modified file /workspace/source/repositories/Chart.yaml to set the chart to version 1
+Ignoring templates/default-group.yaml
+Ignoring templates/***********-http-node-test-sr.yaml
+No requirements file: /tmp/**-helm-apply-413080243/repositories/requirements.yaml so not checking for missing versions
+WARNING: No $CHART_REPOSITORY defined so using the default value of: http://jenkins-x-chartmuseum:8080
+Adding missing Helm repo: jenkins-x-chartmuseum http://jenkins-x-chartmuseum:8080
+Successfully added Helm repository jenkins-x-chartmuseum.
+
+
+Showing logs for build [32mmbakker2000-environment-jobcolo-2bhbr-1[0m stage [32mrelease[0m and container [32mstep-install-pipelines[0m
+
+Showing logs for build [32mmbakker2000-environment-jobcolo-2bhbr-1[0m stage [32mrelease[0m and container [32mstep-update-webhooks[0m
+DEBUG: finding service url for hook in namespace **
+DEBUG: couldn't find service url, attempting to look up via ingress
+DEBUG: found service url http://hook-**.130.211.104.253.nip.io
+Updating webhooks for Owner: *********** and Repository: environment-jobcolors-dev in git server: https://github.com
+Checking hooks for repository ***********/environment-jobcolors-dev with user ***********
+Found matching hook for url http://hook-**.130.211.104.253.nip.io/hook
+Updating GitHub webhook for ***********/environment-jobcolors-dev for url http://hook-**.130.211.104.253.nip.io/hook
+Updating webhooks for Owner: *********** and Repository: environment-jobcolors-production in git server: https://github.com
+Checking hooks for repository ***********/environment-jobcolors-production with user ***********
+Found matching hook for url http://hook-**.130.211.104.253.nip.io/hook
+Updating GitHub webhook for ***********/environment-jobcolors-production for url http://hook-**.130.211.104.253.nip.io/hook
+Updating webhooks for Owner: *********** and Repository: environment-jobcolors-staging in git server: https://github.com
+Checking hooks for repository ***********/environment-jobcolors-staging with user ***********
+Found matching hook for url http://hook-**.130.211.104.253.nip.io/hook
+Updating GitHub webhook for ***********/environment-jobcolors-staging for url http://hook-**.130.211.104.253.nip.io/hook
+Updating webhooks for Owner: *********** and Repository: http-node-test in git server: https://github.com
+Checking hooks for repository ***********/http-node-test with user ***********
+Found matching hook for url http://hook-**.130.211.104.253.nip.io/hook
+Updating GitHub webhook for ***********/http-node-test for url http://hook-**.130.211.104.253.nip.io/hook
+
+Showing logs for build [32mmbakker2000-environment-jobcolo-2bhbr-1[0m stage [32mrelease[0m and container [32mstep-verify-installation[0m
+verifying the Jenkins X installation in namespace **
+verifying pods
+Checking pod statuses
+POD                                          STATUS
+crier-6f75989446-gq89z                       Running
+deck-6d844b55cb-8dww2                        Running
+deck-6d844b55cb-vp4rt                        Running
+hook-756489b884-25bzl                        Running
+hook-756489b884-8bknz                        Running
+horologium-698fff5495-twhjk                  Running
+jenkins-x-chartmuseum-67f75c4884-w4qmw       Running
+jenkins-x-controllerbuild-55cd8f8554-jwlmq   Running
+jenkins-x-controllerrole-856bff855d-dz74x    Running
+jenkins-x-gcactivities-1574748000-fkg7t      Succeeded
+jenkins-x-gcactivities-1574749800-ggsrn      Succeeded
+jenkins-x-gcpods-1574748000-xj8k7            Succeeded
+jenkins-x-gcpods-1574749800-k2nqp            Succeeded
+jenkins-x-gcpreviews-1574748000-9rtng        Succeeded
+jenkins-x-heapster-66754b8fc5-2p8zc          Running
+jenkins-x-nexus-57c8447c4-zj6kk              Running
+pipeline-5d47c95bcd-vffgv                    Running
+pipelinerunner-7c6857bc97-46792              Running
+tekton-pipelines-controller-65fff67458-2nh5p Running
+tide-56458c768c-675xk                        Running
+Verifying the git config
+Verifying username *********** at git server github at https://github.com
+Found 0 organisations in git server https://github.com: 
+Validated pipeline user *********** on git server https://github.com
+Git tokens seem to be setup correctly
+Installation is currently looking: GOOD
