@@ -1,0 +1,7 @@
+dependencies:
+- host: github.com
+  owner: mbakker2000
+  repo: http-node-test
+  url: https://github.com/mbakker2000/http-node-test.git
+  version: ""
+  versionURL: ""
