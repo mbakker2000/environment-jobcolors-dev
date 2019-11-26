@@ -1,0 +1,21 @@
+apiVersion: jenkins.io/v1
+kind: SourceRepository
+metadata:
+  creationTimestamp: null
+  labels:
+    owner: mbakker2000
+    provider: github
+    repository: jobcolors-styling
+  name: mbakker2000-jobcolors-styling
+spec:
+  description: Imported application for mbakker2000/jobcolors-styling
+  httpCloneURL: https://github.com/mbakker2000/jobcolors-styling.git
+  org: mbakker2000
+  provider: https://github.com
+  providerKind: github
+  providerName: github
+  repo: jobcolors-styling
+  scheduler:
+    kind: ""
+    name: ""
+  url: https://github.com/mbakker2000/jobcolors-styling.git

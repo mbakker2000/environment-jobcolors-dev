@@ -5,3 +5,9 @@ dependencies:
   url: https://github.com/mbakker2000/http-node-test.git
   version: ""
   versionURL: ""
+- host: github.com
+  owner: mbakker2000
+  repo: jobcolors-styling
+  url: https://github.com/mbakker2000/jobcolors-styling.git
+  version: ""
+  versionURL: ""
